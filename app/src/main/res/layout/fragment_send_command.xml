@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+    <data>
+        <variable
+            name="vm"
+            type="com.stardust.co.vm.SendCommandVM" />
+    </data>
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="12dp">
+        <TextView
+            android:id="@+id/tv_cur_target"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:textSize="18sp"
+            tools:text="@string/cur_target"/>
+        <LinearLayout
+            android:id="@+id/ll_cur_target"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginTop="16dp"
+            app:layout_constraintTop_toBottomOf="@id/tv_cur_target">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="18sp"
+                tools:text="regId:some register id"/>
+        </LinearLayout>
+        <LinearLayout
+            android:id="@+id/ll_command_btns"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintTop_toBottomOf="@id/ll_cur_target"
+            android:layout_marginTop="12dp">
+            <Button
+                android:id="@+id/btn_open_ding"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/send_open_ding"
+                android:backgroundTint="@color/primary"
+                android:textColor="@color/white"/>
+            <Button
+                android:id="@+id/btn_send_get_status"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:backgroundTint="@color/success"
+                android:textColor="@color/white"
+                android:text="@string/send_get_status"/>
+            <Button
+                android:id="@+id/btn_send_test"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="@string/send_test"/>
+        </LinearLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

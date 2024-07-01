@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/guideFragment">
+
+    <fragment
+        android:id="@+id/guideFragment"
+        android:name="com.stardust.co.ui.GuideFragment"
+        tools:layout="@layout/fragment_guide"
+        android:label="GuideFragment" />
+    <fragment
+        android:id="@+id/mailSettingFragment"
+        android:name="com.stardust.co.ui.MailSettingFragment"
+        tools:layout="@layout/fragment_mail_setting"
+        android:label="MailSettingFragment" />
+    <fragment
+        android:id="@+id/receiverSettingFragment"
+        android:name="com.stardust.co.ui.ReceiverSettingFragment"
+        tools:layout="@layout/fragment_receiver_setting"
+        android:label="ReceiverSettingFragment" />
+    <fragment
+        android:id="@+id/sendCommandFragment"
+        android:name="com.stardust.co.ui.SendCommandFragment"
+        tools:layout="@layout/fragment_send_command"
+        android:label="SendCommandFragment" />
+    <fragment
+        android:id="@+id/receiveCommandFragment"
+        android:name="com.stardust.co.ui.ReceiveCommandFragment"
+        tools:layout="@layout/fragment_receive_command"
+        android:label="ReceiveCommandFragment" />
+</navigation>

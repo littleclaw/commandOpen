@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+    <data>
+        <import type="android.view.View"/>
+        <variable
+            name="vm"
+            type="com.stardust.co.vm.GuideVM" />
+    </data>
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="12dp">
+        <TextView
+            android:id="@+id/tv_guide"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:textSize="18sp"
+            android:text="@{vm.guideTip}"
+            tools:text="接收端需要配置发件邮箱，发送端需要配置接收端regId"/>
+        <Button
+            android:id="@+id/btn_go_email_setting"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/go_email_setting"
+            android:layout_marginTop="12dp"
+            android:visibility="@{vm.targetSettingConfigured?View.GONE: View.VISIBLE}"
+            app:layout_constraintTop_toBottomOf="@id/tv_guide"/>
+        <Button
+            android:id="@+id/btn_go_reg_id_setting"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            app:layout_constraintTop_toBottomOf="@id/btn_go_email_setting"
+            android:visibility="@{vm.masterSettingConfigured?View.GONE: View.VISIBLE}"
+            android:text="@string/go_reg_id_setting"/>
+        <Button
+            android:id="@+id/btn_set_as_host"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/btn_go_reg_id_setting"
+            android:layout_marginTop="12dp"
+            android:backgroundTint="@color/warning"
+            android:textColor="@color/white"
+            android:visibility="@{vm.masterSettingConfigured?View.VISIBLE: View.GONE}"
+            android:text="@string/set_as_host"/>
+        <Button
+            android:id="@+id/btn_set_as_target"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/btn_set_as_host"
+            android:layout_marginTop="12dp"
+            android:backgroundTint="@color/warning"
+            android:textColor="@color/white"
+            android:visibility="@{vm.targetSettingConfigured?View.VISIBLE: View.GONE}"
+            android:text="@string/set_as_target"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
