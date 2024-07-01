@@ -2,8 +2,11 @@ package com.stardust.co.vm
 
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.viewModelScope
+import cn.jpush.android.api.JPushInterface
 import com.blankj.utilcode.util.CacheDiskUtils
+import com.blankj.utilcode.util.LogUtils
 import com.blankj.utilcode.util.SPUtils
+import com.stardust.co.CoApplication
 import com.stardust.co.model.BodyMsg
 import com.stardust.co.model.PushAudience
 import com.stardust.co.model.PushMessage
@@ -51,11 +54,11 @@ class SendCommandVM : BaseViewModel() {
                 }
                 pushMessage.message = BodyMsg().apply {
                     msg_content = cmd
-                    title = CacheDiskUtils.getInstance().getString("pushRegId")
+                    title = JPushInterface.getRegistrationID(CoApplication.instance)
                 }
                 pushResult.value = pushApiService.pushMsg(pushMessage)
             }.onFailure {
-
+                it.printStackTrace()
             }
         }
     }

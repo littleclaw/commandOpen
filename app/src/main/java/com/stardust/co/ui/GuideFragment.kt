@@ -27,9 +27,12 @@ class GuideFragment: BaseVmDbFragment<GuideVM, FragmentGuideBinding>() {
     override fun dismissLoading() {
     }
 
+    override fun onStart() {
+        super.onStart()
+        mViewModel.checkSetting()
+    }
     override fun initView(savedInstanceState: Bundle?) {
         mDatabind.vm = mViewModel
-        mViewModel.checkSetting()
         mDatabind.btnGoEmailSetting.clickNoRepeat {
             nav().navigate(R.id.mailSettingFragment)
         }
@@ -37,10 +40,10 @@ class GuideFragment: BaseVmDbFragment<GuideVM, FragmentGuideBinding>() {
             nav().navigate(R.id.receiverSettingFragment)
         }
         mDatabind.btnSetAsHost.clickNoRepeat {
-            nav().navigate(R.id.sendCommandFragment)
+            nav().navigate(R.id.action_guideFragment_to_sendCommandFragment)
         }
         mDatabind.btnSetAsTarget.clickNoRepeat {
-            nav().navigate(R.id.receiveCommandFragment)
+            nav().navigate(R.id.action_guideFragment_to_receiveCommandFragment)
         }
     }
 

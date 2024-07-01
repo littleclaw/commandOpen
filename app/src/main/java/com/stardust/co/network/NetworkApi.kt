@@ -30,6 +30,7 @@ class NetworkApi : BaseNetworkApi() {
 //            addInterceptor(MyHeadInterceptor())
             // 日志拦截器
             addInterceptor(LogInterceptor())
+            addInterceptor(AuthInterceptor)
             //超时时间 连接、读、写
             connectTimeout(20, TimeUnit.SECONDS)
             readTimeout(15, TimeUnit.SECONDS)

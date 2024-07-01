@@ -9,25 +9,46 @@
         android:id="@+id/guideFragment"
         android:name="com.stardust.co.ui.GuideFragment"
         tools:layout="@layout/fragment_guide"
-        android:label="GuideFragment" />
+        android:label="引导配置" >
+        <action
+            android:id="@+id/action_guideFragment_to_sendCommandFragment"
+            app:destination="@id/sendCommandFragment"
+            app:popUpTo="@id/nav_graph" />
+        <action
+            android:id="@+id/action_guideFragment_to_receiveCommandFragment"
+            app:destination="@id/receiveCommandFragment"
+            app:popUpTo="@id/nav_graph" />
+    </fragment>
     <fragment
         android:id="@+id/mailSettingFragment"
         android:name="com.stardust.co.ui.MailSettingFragment"
         tools:layout="@layout/fragment_mail_setting"
-        android:label="MailSettingFragment" />
+        android:label="接收端发件邮箱配置" >
+        <action
+            android:id="@+id/action_mailSettingFragment_to_guideFragment"
+            app:destination="@id/guideFragment"
+            app:popUpTo="@id/nav_graph"
+            app:launchSingleTop="true" />
+    </fragment>
     <fragment
         android:id="@+id/receiverSettingFragment"
         android:name="com.stardust.co.ui.ReceiverSettingFragment"
         tools:layout="@layout/fragment_receiver_setting"
-        android:label="ReceiverSettingFragment" />
+        android:label="发送端目标配置" >
+        <action
+            android:id="@+id/action_receiverSettingFragment_to_guideFragment"
+            app:destination="@id/guideFragment"
+            app:popUpTo="@id/nav_graph"
+            app:launchSingleTop="true" />
+    </fragment>
     <fragment
         android:id="@+id/sendCommandFragment"
         android:name="com.stardust.co.ui.SendCommandFragment"
         tools:layout="@layout/fragment_send_command"
-        android:label="SendCommandFragment" />
+        android:label="发送指令" />
     <fragment
         android:id="@+id/receiveCommandFragment"
         android:name="com.stardust.co.ui.ReceiveCommandFragment"
         tools:layout="@layout/fragment_receive_command"
-        android:label="ReceiveCommandFragment" />
+        android:label="接收指令" />
 </navigation>

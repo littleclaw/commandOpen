@@ -119,7 +119,6 @@ class PushCoreService : JPushMessageService() {
         }
     }
 
-    @OptIn(DelicateCoroutinesApi::class)
     private fun reply(targetRegId:String){
 
     }

@@ -22,7 +22,7 @@ class GuideVM: BaseViewModel() {
             val receiverRegId = sp.getString(SP_KEY_RECEIVE_REG_ID)
             targetSettingConfigured.value = senderAuth.isNotEmpty()
             masterSettingConfigured.value = receiverRegId.isNotEmpty()
-            if (senderAuth.isEmpty() || receiverRegId.isEmpty()){
+            if (senderAuth.isEmpty() && receiverRegId.isEmpty()){
                 guideTip.value = "尚未配置，请根据本机用途选择配置"
             }else if(senderAuth.isNotEmpty()){
                 guideTip.value = "已配置指令接收端电子邮箱"

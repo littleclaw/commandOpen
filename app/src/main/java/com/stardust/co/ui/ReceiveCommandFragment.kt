@@ -14,7 +14,7 @@ class ReceiveCommandFragment: BaseVmDbFragment<ReceiveCommandVM, FragmentReceive
     }
 
     override fun initView(savedInstanceState: Bundle?) {
-
+        mDatabind.vm = mViewModel
     }
 
     override fun lazyLoadData() {

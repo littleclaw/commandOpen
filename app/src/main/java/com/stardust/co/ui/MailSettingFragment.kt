@@ -1,9 +1,11 @@
 package com.stardust.co.ui
 
 import android.os.Bundle
+import com.stardust.co.R
 import com.stardust.co.databinding.FragmentMailSettingBinding
 import com.stardust.co.vm.MailSettingVM
 import me.hgj.jetpackmvvm.base.fragment.BaseVmDbFragment
+import me.hgj.jetpackmvvm.ext.nav
 import me.hgj.jetpackmvvm.ext.view.clickNoRepeat
 
 class MailSettingFragment: BaseVmDbFragment<MailSettingVM, FragmentMailSettingBinding>() {
@@ -27,7 +29,7 @@ class MailSettingFragment: BaseVmDbFragment<MailSettingVM, FragmentMailSettingBi
         mViewModel.initSetting()
         mDatabind.btnSaveMailConf.setOnClickListener {
             mViewModel.saveSetting()
-            //nav()
+            nav().navigate(R.id.action_mailSettingFragment_to_guideFragment)
         }
         mDatabind.btnTestMailConf.clickNoRepeat {
             mViewModel.testSetting()
