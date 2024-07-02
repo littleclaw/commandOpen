@@ -9,6 +9,7 @@ import android.content.pm.PackageManager
 import android.os.Build
 import android.os.Bundle
 import android.provider.Settings
+import androidx.activity.addCallback
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.core.app.NotificationManagerCompat
 import androidx.navigation.findNavController
@@ -74,6 +75,9 @@ class MainActivity : BaseVmDbActivity<MainVM, ActivityMainBinding>() {
         mDatabind.vm = mViewModel
         mViewModel.checkVersion()
         checkNotification()
+        onBackPressedDispatcher.addCallback {
+            moveTaskToBack(false)
+        }
     }
 
     override fun onStart() {

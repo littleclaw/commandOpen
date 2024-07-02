@@ -12,12 +12,10 @@
         android:label="引导配置" >
         <action
             android:id="@+id/action_guideFragment_to_sendCommandFragment"
-            app:destination="@id/sendCommandFragment"
-            app:popUpTo="@id/nav_graph" />
+            app:destination="@id/sendCommandFragment" />
         <action
             android:id="@+id/action_guideFragment_to_receiveCommandFragment"
-            app:destination="@id/receiveCommandFragment"
-            app:popUpTo="@id/nav_graph" />
+            app:destination="@id/receiveCommandFragment" />
     </fragment>
     <fragment
         android:id="@+id/mailSettingFragment"
@@ -27,7 +25,6 @@
         <action
             android:id="@+id/action_mailSettingFragment_to_guideFragment"
             app:destination="@id/guideFragment"
-            app:popUpTo="@id/nav_graph"
             app:launchSingleTop="true" />
     </fragment>
     <fragment
@@ -38,7 +35,6 @@
         <action
             android:id="@+id/action_receiverSettingFragment_to_guideFragment"
             app:destination="@id/guideFragment"
-            app:popUpTo="@id/nav_graph"
             app:launchSingleTop="true" />
     </fragment>
     <fragment

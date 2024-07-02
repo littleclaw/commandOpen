@@ -44,7 +44,7 @@
             android:layout_height="wrap_content"
             app:layout_constraintTop_toBottomOf="@id/btn_go_reg_id_setting"
             android:layout_marginTop="12dp"
-            android:backgroundTint="@color/warning"
+            android:backgroundTint="@color/primary"
             android:textColor="@color/white"
             android:visibility="@{vm.masterSettingConfigured?View.VISIBLE: View.GONE}"
             android:text="@string/set_as_host"/>

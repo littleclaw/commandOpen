@@ -17,6 +17,9 @@
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
+            android:text="@string/receiving_command"
+            android:layout_marginTop="16dp"
+            android:textSize="20sp"
             tools:text="指令接收中……"/>
 
     </androidx.constraintlayout.widget.ConstraintLayout>

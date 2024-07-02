@@ -1,6 +1,7 @@
 <resources>
     <string name="app_name">CommandOpen</string>
     <string name="copy">复制</string>
+    <string name="receiving_command">接收指令中……</string>
     <string name="sender_email">请输入发件邮件</string>
     <string name="sender_email_auth">发件邮箱授权码</string>
     <string name="receiver_email">请输入收件邮箱</string>
@@ -16,6 +17,6 @@
     <string name="send_test">发送测试指令</string>
     <string name="go_email_setting">指令接收端配置</string>
     <string name="go_reg_id_setting">指令发送端配置</string>
-    <string name="set_as_host">设置为发送端</string>
-    <string name="set_as_target">设置为接收端</string>
+    <string name="set_as_host">发送指令视图</string>
+    <string name="set_as_target">接收端</string>
 </resources>

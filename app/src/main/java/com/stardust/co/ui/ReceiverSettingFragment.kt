@@ -19,6 +19,7 @@ class ReceiverSettingFragment: BaseVmDbFragment<ReceiverSettingVM, FragmentRecei
 
     override fun initView(savedInstanceState: Bundle?) {
         mDatabind.vm = mViewModel
+        mViewModel.loadSave()
         mDatabind.btnSaveReg.clickNoRepeat {
             mViewModel.saveRegId()
             toast("已保存设置")

@@ -9,6 +9,10 @@ const val SP_KEY_RECEIVE_REG_ID = "receiveRegId"
 class ReceiverSettingVM : BaseViewModel() {
     val receiverReg = MutableLiveData("")
 
+    fun loadSave(){
+        val sp = SPUtils.getInstance()
+        receiverReg.value = sp.getString(SP_KEY_RECEIVE_REG_ID)
+    }
     fun saveRegId(){
         val sp = SPUtils.getInstance()
         sp.put(SP_KEY_RECEIVE_REG_ID, receiverReg.value)
